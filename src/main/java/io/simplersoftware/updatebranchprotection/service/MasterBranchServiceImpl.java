@@ -1,6 +1,5 @@
 package io.simplersoftware.updatebranchprotection.service;
 
-
 import io.simplersoftware.updatebranchprotection.message.RequestProtectionMessage;
 import io.simplersoftware.updatebranchprotection.message.ResponseProtectionMessage;
 import io.simplersoftware.updatebranchprotection.message.model.*;
@@ -13,11 +12,10 @@ import java.lang.String;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Service
 public class MasterBranchServiceImpl implements BranchService {
 
-    @Value("${GITHUB_PAT_UPDATE_BRANCH_PROTECTION}")
+    @Value("${GITHUB.BRANCH.PROTECTION.TOKEN}")
     private String token;
 
     @Override
@@ -28,12 +26,15 @@ public class MasterBranchServiceImpl implements BranchService {
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(token);
 
+        // A custom header media type as mentioned on the API documentation for the protection endpoint (Developer Preview)
         List<MediaType> mediaTypes = new ArrayList<>();
         mediaTypes.add(MediaType.valueOf("application/vnd.github.luke-cage-preview+json"));
         headers.setAccept(mediaTypes);
 
+        // Construct the default protection and wrap the body and header into http request entity
         HttpEntity<RequestProtectionMessage> requestEntity = new HttpEntity(createDefaultProtection(), headers);
 
+        // Send http post request using the rest template
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<ResponseProtectionMessage> response = restTemplate.exchange(
                 url, HttpMethod.PUT, requestEntity, ResponseProtectionMessage.class);
@@ -41,6 +42,11 @@ public class MasterBranchServiceImpl implements BranchService {
         return response.getBody();
     }
 
+    /*
+     * Construct the default protection message
+     * strict = true | context = new-repository | min-review = 1 | enforce-admin = false |
+     * dismiss-stale-reviews = false | require-owner-review = false | restriction = null | dismissalRestrictions = null
+     * */
     private RequestProtectionMessage createDefaultProtection(){
 
         RequiredStatusChange requiredStatusChange = new RequiredStatusChange(true, new String[]{"new-repository"});

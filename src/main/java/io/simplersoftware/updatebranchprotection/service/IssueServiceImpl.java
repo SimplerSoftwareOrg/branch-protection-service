@@ -13,24 +13,25 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class IssueServiceImpl implements IssueService {
 
-    @Value("${GITHUB_PAT_UPDATE_BRANCH_PROTECTION}")
+    @Value("${GITHUB.BRANCH.PROTECTION.TOKEN}")
     private String token;
 
     @Override
-    public boolean createNewIssue(String title, String body, String repoOwner, String repoName) {
+    public void createNewIssue(String title, String body, String repoOwner, String repoName) {
+
         String url = "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/issues";
 
-        RequestIssueMessage issueMessage = new RequestIssueMessage(title, body);
-        System.out.println(issueMessage);
+        // Instantiate http header and add the bearer token to the header
         HttpHeaders headers = new HttpHeaders();
         headers.setBearerAuth(token);
 
-        HttpEntity<RequestProtectionMessage> requestEntity = new HttpEntity(issueMessage, headers);
+        // Create the request message and wrap into http request entity
+        RequestIssueMessage issueMessage = new RequestIssueMessage(title, body);
+        HttpEntity<RequestIssueMessage> requestEntity = new HttpEntity(issueMessage, headers);
 
+        // Send http post request using the rest template
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, requestEntity, String.class);
-
-        System.out.println(response);
-        return true;
+        restTemplate.exchange(url, HttpMethod.POST, requestEntity, String.class);
     }
+
 }

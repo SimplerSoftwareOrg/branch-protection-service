@@ -1,6 +1,5 @@
 package io.simplersoftware.updatebranchprotection.message;
 
-import javax.swing.*;
 
 public class RequestIssueMessage {
 
