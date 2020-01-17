@@ -14,6 +14,9 @@ public class Restrictions {
         this.apps = apps;
     }
 
+    public Restrictions() {
+    }
+
     public String[] getUsers() {
         return users;
     }

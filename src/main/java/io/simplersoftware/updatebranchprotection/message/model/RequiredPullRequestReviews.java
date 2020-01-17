@@ -14,6 +14,9 @@ public class RequiredPullRequestReviews {
         this.required_approving_review_count = required_approving_review_count;
     }
 
+    public RequiredPullRequestReviews() {
+    }
+
     public DismissalRestrictions getDismissal_restrictions() {
         return dismissal_restrictions;
     }

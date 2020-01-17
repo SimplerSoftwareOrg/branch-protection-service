@@ -1,6 +1,5 @@
 package io.simplersoftware.updatebranchprotection.message;
 
-import io.simplersoftware.updatebranchprotection.message.model.Installation;
 import io.simplersoftware.updatebranchprotection.message.model.Repository;
 
 

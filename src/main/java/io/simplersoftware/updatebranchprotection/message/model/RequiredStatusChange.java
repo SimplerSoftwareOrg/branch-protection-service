@@ -12,6 +12,9 @@ public class RequiredStatusChange {
         this.contexts = contexts;
     }
 
+    public RequiredStatusChange() {
+    }
+
     public boolean isStrict() {
         return strict;
     }

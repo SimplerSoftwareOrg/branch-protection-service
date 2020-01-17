@@ -12,6 +12,9 @@ public class DismissalRestrictions {
         this.teams = teams;
     }
 
+    public DismissalRestrictions() {
+    }
+
     public String[] getUsers() {
         return users;
     }
