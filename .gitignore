@@ -1,5 +1,6 @@
 .env
 *.der
+.DS*
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
