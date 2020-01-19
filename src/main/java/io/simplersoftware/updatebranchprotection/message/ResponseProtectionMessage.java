@@ -75,12 +75,12 @@ public class ResponseProtectionMessage {
     public String toString() {
         return "ResponseProtectionMessage{" +
                 "url='" + url + '\'' +
-                ", required_status_checks=" + required_status_checks +
-                ", restrictions=" + restrictions +
-                ", required_pull_request_reviews=" + required_pull_request_reviews +
-                ", enforce_admins=" + enforce_admins.toString() +
-                ", allow_force_pushes=" + allow_force_pushes.toString() +
-                ", allow_deletions=" + allow_deletions.toString() +
+                ", required_status_checks=" + required_status_checks + '\'' +
+                ", restrictions=" + restrictions + '\'' +
+                ", required_pull_request_reviews=" + required_pull_request_reviews + '\'' +
+                ", enforce_admins=" + enforce_admins.toString() + '\'' +
+                ", allow_force_pushes=" + allow_force_pushes.toString() + '\'' +
+                ", allow_deletions=" + allow_deletions.toString() + '\'' +
                 '}';
     }
 }

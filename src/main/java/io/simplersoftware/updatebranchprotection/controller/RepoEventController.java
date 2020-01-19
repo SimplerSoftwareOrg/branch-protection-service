@@ -22,10 +22,11 @@ public class RepoEventController {
     * receives all repository events and filters them based on the action
     * */
     @PostMapping("/repo/event")
-    public void filterEvents(@RequestBody RepositoryEventMessage eventMessage) {
+    public void filterEvents(@RequestBody RepositoryEventMessage eventMessage) throws InterruptedException {
 
         // If the action received in the repo event is created then start the default master branch protection process
         if (eventMessage.getAction().equals("created")) {
+            Thread.sleep(200);
             protectMasterBranch(eventMessage);
         }
     }

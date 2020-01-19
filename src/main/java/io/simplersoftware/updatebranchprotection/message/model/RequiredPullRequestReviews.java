@@ -51,11 +51,11 @@ public class RequiredPullRequestReviews {
 
     @Override
     public String toString() {
-        return "RequiredPullRequestReviews{" +
-                "dismissal_restrictions=" + dismissal_restrictions +
-                ", dismiss_stale_reviews=" + dismiss_stale_reviews +
-                ", require_code_owner_reviews=" + require_code_owner_reviews +
-                ", required_approving_review_count=" + required_approving_review_count +
+        return "RequiredPullRequestReviews{" + '\'' +
+                "dismissal_restrictions=" + dismissal_restrictions + '\'' +
+                ", dismiss_stale_reviews=" + dismiss_stale_reviews + '\'' +
+                ", require_code_owner_reviews=" + require_code_owner_reviews + '\'' +
+                ", required_approving_review_count=" + required_approving_review_count + '\'' +
                 '}';
     }
 }

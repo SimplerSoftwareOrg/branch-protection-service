@@ -33,9 +33,9 @@ public class RequiredStatusChange {
 
     @Override
     public String toString() {
-        return "RequiredStatusChange{" +
-                "strict=" + strict +
-                ", contexts=" + Arrays.toString(contexts) +
+        return "RequiredStatusChange{" + '\'' +
+                "strict=" + strict + '\'' +
+                ", contexts=" + Arrays.toString(contexts) + '\'' +
                 '}';
     }
 }

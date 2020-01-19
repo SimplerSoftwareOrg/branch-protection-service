@@ -33,9 +33,9 @@ public class DismissalRestrictions {
 
     @Override
     public String toString() {
-        return "DismissalRestrictions{" +
-                "users=" + Arrays.toString(users) +
-                ", teams=" + Arrays.toString(teams) +
+        return "DismissalRestrictions{" + '\'' +
+                "users=" + Arrays.toString(users) + '\'' +
+                ", teams=" + Arrays.toString(teams) + '\'' +
                 '}';
     }
 }

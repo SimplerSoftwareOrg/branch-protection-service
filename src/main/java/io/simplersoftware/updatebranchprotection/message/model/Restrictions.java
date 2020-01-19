@@ -43,10 +43,10 @@ public class Restrictions {
 
     @Override
     public String toString() {
-        return "Restrictions{" +
-                "users=" + Arrays.toString(users) +
-                ", teams=" + Arrays.toString(teams) +
-                ", apps=" + Arrays.toString(apps) +
+        return "Restrictions{" + '\'' +
+                "users=" + Arrays.toString(users) + '\'' +
+                ", teams=" + Arrays.toString(teams) + '\'' +
+                ", apps=" + Arrays.toString(apps) + '\'' +
                 '}';
     }
 }
