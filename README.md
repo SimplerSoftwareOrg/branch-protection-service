@@ -18,10 +18,10 @@ Java 13, Spring, Maven
 
 2. Set a system environment variable called GITHUB_TOKEN to the personal access token value of your GitHub account
 `export GITHUB_TOKEN=<personal access token>`
-> Note: the access token should have full repo access. 
+> Note: the access token is used to authenticate the updates on the repo and should have full repo access. 
 To create one, go to your account page and from the right top drop down menu go to 'Settings', then go to 'Developer Settings', then click 'Personal access token', now click on 'Generate new token'. Give the token a description such as "branch-protection" and select the repo full access scope then click 'Generate Token'. Now you can copy this value and set the environment variable GITHUB_TOKEN as mentioned above.
 
-3. At this point you can build and run the service however you can't test it yet. To test the code please skip step 3 and continue with step 4-8 before building and running the code.
+3. At this point you can build and run the service however you can't test it yet. To test the code please follow steps 4-8 first before building and running the code.
 To build code: in your command line go inside the project's top directory and run:
 `mvn clean install`
 The previous command will generate a jar file and prompt the location of the jar file, copy the location of the jar file.
