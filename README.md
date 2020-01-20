@@ -27,7 +27,7 @@ To build code: in your command line go inside the project's top directory and ru
 The previous command will generate a jar file and prompt the location of the jar file, copy the location of the jar file.
 To run code: 
 `java -jar <JAR file path>`
-> Note: This service will start on http port 8080 by default, however if this port is unavailable on your server then please add the following property to the src/main/resources/application.properties
+> Note: This service will start on http port 8080 by default, however if this port is unavailable on your server then please add the following property to the src/main/resources/application.properties file
 `server.port=<port number>` note that port number must be the same as used in step 5.
 
 ## How to test the service
@@ -50,3 +50,14 @@ Click ‘Add webhook’
 8. Now you can start the service as described in step 3
 
 9. Create a new repository in your organisation. You should receive a mention notification confirming that the master branch of the new repository is protected and listing the protections applied.
+
+> You can experiment with different protections by setting the values of the following properties in the src/main/resources/application.properties file
+`github.branch.default.protection.statusCheck.strict = true`
+`github.branch.default.protection.statusCheck.contexts = default-context`
+`github.branch.default.protection.enforceAdmin = false`
+`github.branch.default.protection.pullRequestReviews.count = 1`
+`github.branch.default.protection.dismissalRestriction.users =`
+`github.branch.default.protection.dismissalRestriction.teams =`
+`github.branch.default.protection.Restriction.users =`
+`github.branch.default.protection.Restriction.teams =`
+`github.branch.default.protection.Restriction.apps =`
