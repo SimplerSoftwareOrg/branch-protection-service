@@ -17,7 +17,7 @@ Java 13, Spring, Maven
 `git clone https://github.com/SimplerSoftwareOrg/branch-protection-service.git`
 
 2. Set a system environment variable called GITHUB_TOKEN to the personal access token value of your GitHub account
-`export GITHUB_TOKEN=<personal access token>`
+run `export GITHUB_TOKEN=<personal access token>` or add the variable to the .bash_profile file under your account.
 > Note: the access token is used to authenticate the updates on the repo and should have full repo access. 
 To create one, go to your account page and from the right top drop down menu go to 'Settings', then go to 'Developer Settings', then click 'Personal access token', now click on 'Generate new token'. Give the token a description such as "branch-protection" and select the repo full access scope then click 'Generate Token'. Now you can copy this value and set the environment variable GITHUB_TOKEN as mentioned above.
 
@@ -42,9 +42,9 @@ In order to test the service, you need a Github account, Github Organisation, Or
 6. Create an organisation on your Github account
 
 7. Create a new organisation webhook, go to your account ‘Settings’ and click on ‘Organisation settings’ then go to ‘Webhooks’ and click ‘Add webhook’ and enter/select the following values:
-`Payload URL: <the generated smee url from step 5>`
-`Content type: application/json`
-`Which events would you like to trigger this webhook?: Let me select individual events: Repositories`
+`Payload URL: <the generated smee url from step 5>;`
+`Content type: application/json;`
+`Which events would you like to trigger this webhook?: Let me select individual events: Repositories;`
 Click ‘Add webhook’
 
 8. Now you can start the service as described in step 3
