@@ -56,8 +56,8 @@ Click ‘Add webhook’
 `github.branch.default.protection.statusCheck.contexts = default-context`
 `github.branch.default.protection.enforceAdmin = false`
 `github.branch.default.protection.pullRequestReviews.count = 1`
-`github.branch.default.protection.dismissalRestriction.users =`
-`github.branch.default.protection.dismissalRestriction.teams =`
-`github.branch.default.protection.Restriction.users =`
-`github.branch.default.protection.Restriction.teams =`
-`github.branch.default.protection.Restriction.apps =`
+`github.branch.default.protection.dismissalRestriction.users =<comma separated list of users>`
+`github.branch.default.protection.dismissalRestriction.teams =<comma separated list of teams>`
+`github.branch.default.protection.Restriction.users =<comma separated list of users>`
+`github.branch.default.protection.Restriction.teams =<comma separated list of teams>`
+`github.branch.default.protection.Restriction.apps =<comma separated list of apps>`
