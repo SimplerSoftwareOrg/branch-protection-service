@@ -61,3 +61,6 @@ Click ‘Add webhook’
 `github.branch.default.protection.Restriction.users =<comma separated list of users>`
 `github.branch.default.protection.Restriction.teams =<comma separated list of teams>`
 `github.branch.default.protection.Restriction.apps =<comma separated list of apps>`
+
+
+> Note: if you are not receiving the notification emails in your mailbox then you may need to enable notifying your own updates by going to Settings->Notifications-> tick the checkbox called Include your own updates.
